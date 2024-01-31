@@ -1,0 +1,316 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Wix Madefor Text', sans-serif; */
+}
+
+.mainWrapper {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+.baseWrapper {
+    display: grid;
+    grid-template-columns: 72.5vb 1fr;
+    height: 100vh;
+}
+
+.asideOne {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(249, 232, 51, 1) 0%, rgba(250, 196, 59, 1) 100.2%);
+}
+
+.formWrapper {
+    background-color: #193787;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 61vb 1fr;
+}
+
+.asideInner {
+    background-color: azure;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.asideInner img {
+    width: 27vw;
+    height: 58vh;
+}
+
+.loginWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputForms {
+    text-align: center;
+    justify-items: center;
+}
+
+.footerText {
+    margin: 20px;
+    color: azure;
+}
+
+.green {
+    color: #fec447;
+    font-weight: 600;
+}
+
+:root {
+
+    --input-color: #193787;
+    --input-border: #CDD9ED;
+    --input-background: #fff;
+    --input-placeholder: #b6bbc4;
+
+    --input-border-focus: #275EFE;
+
+    --group-color: var(--input-color);
+    --group-border: var(--input-border);
+    --group-background: #EEF4FF;
+
+    --group-color-focus: #fff;
+    --group-border-focus: var(--input-border-focus);
+    --group-background-focus: #678EFE;
+
+}
+
+.form-field {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 6px;
+    color: var(--input-color);
+    border: 1px solid var(--input-border);
+    background: var(--input-background);
+    transition: border .3s ease;
+
+    &::placeholder {
+        color: var(--input-placeholder);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: var(--input-border-focus);
+    }
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    width: 40vw;
+    margin: 30px;
+
+    &>span,
+    .form-field {
+        white-space: nowrap;
+        display: block;
+
+
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+
+        &:first-child {
+            border-radius: 6px 0 0 6px;
+        }
+
+        &:last-child {
+            border-radius: 0 6px 6px 0;
+        }
+
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
+    }
+
+    .form-field {
+        position: relative;
+        z-index: 1;
+        flex: 1 1 auto;
+        width: 1%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &>span {
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 25px;
+        color: var(--group-color);
+        background: var(--group-background);
+        border: 1px solid var(--group-border);
+        transition: background .3s ease, border .3s ease, color .3s ease;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    &:focus-within {
+        &>span {
+            color: var(--group-color-focus);
+            background: var(--group-background-focus);
+            border-color: var(--group-border-focus);
+        }
+    }
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    margin: 10px;
+    margin-top: 0;
+    padding: 12px;
+    border: 2px solid;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: 550;
+    color: #193787;
+}
+
+.createBtn {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, #f9e833 0%, #fac43b 100.2%);
+    border-color: #fac43b;
+}
+
+.joiningBtn {
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    border-color: #96e6a1;
+}
+
+.joiningBtn:hover,
+.createBtn:hover {
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.createBtn:hover {
+    border: 2px solid;
+    border-color: #fec447;
+}
+
+.joinBtn:hover {
+    border: 2px solid;
+    border-color: #96e6a1;
+}
+
+@media screen and (max-width: 750px) and (max-height: 580px) {
+    /* Styles for screens less than 750x580 go here */
+
+    .hideOnSmallScreen {
+        display: none;
+    }
+
+    .mainWrapper {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .form-group {
+        width: fit-content;
+    }
+
+    /* .loginWrapper {
+        display: flex;
+        justify-content: center;
+    } */
+
+    .formWrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 60vh;
+        width: 60vw;
+    }
+
+    .loginWrapper {
+        justify-content: center;
+    }
+
+    /* .inputForms {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    } */
+
+    .baseWrapper {
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width: 400px) and (max-height: 300px) {
+    /* Styles for screens less than 750x580 go here */
+
+    .hideOnSmallScreen {
+        display: none;
+    }
+
+    .mainWrapper {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .form-group {
+        width: fit-content;
+    }
+
+    /* .loginWrapper {
+        display: flex;
+        justify-content: center;
+    } */
+
+    .formWrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 50vh;
+        width: 50vw;
+    }
+
+    .loginWrapper {
+        justify-content: center;
+    }
+
+    /* .inputForms {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    } */
+
+    .baseWrapper {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 530px) and (max-height: 500px) {
+    .button-group {
+        display: flex;
+    }
+
+    .btn {
+        width: 100px;
+    }
+}
